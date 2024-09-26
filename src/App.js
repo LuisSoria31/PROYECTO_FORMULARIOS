@@ -1,4 +1,4 @@
-import './App.css';
+import './App';
 import { Card } from 'react-bootstrap';
 
 function App() {
