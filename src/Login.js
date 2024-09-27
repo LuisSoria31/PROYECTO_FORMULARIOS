@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Card, Container, Form} from "react-bootstrap";
 
-const Login=()=>{
+export const Login=()=>{
 
 const [datos, setDatos]=useState({})
 

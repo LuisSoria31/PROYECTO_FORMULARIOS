@@ -20,10 +20,13 @@ export const Home = () => {
                     <Nav.Link href='/home'>Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item className='mt-3'>
-                    <Nav.Link eventKey='/'>Bases</Nav.Link>
+                    <Nav.Link eventKey='/bases'>Bases</Nav.Link>
                 </Nav.Item>
                 <Nav.Item className='mt-3'>
                     <Nav.Link eventKey='/create-questionnaire'>Crear Nuevo Cuestionario</Nav.Link>
+                </Nav.Item>
+                <Nav.Item className='mt-3'>
+                    <Nav.Link eventKey='/recuperarContraseña'>Recuperar Contraseña</Nav.Link>
                 </Nav.Item>
             </Nav>
             <Container className='mt-5'>

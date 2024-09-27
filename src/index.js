@@ -1,25 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import App from './App'
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './home';
+import {Home} from './home';
+import {Login} from './Login';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Login from './Login';
+import {RecuperarContraseña} from './recuperarContraseña';
+
+//import {create-questionnaire} from './create-cuestionarie';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <App/>,
+  }, 
+  {
+    path: "/home",
     element: <Home/>,
   }, 
   {
     path: "/login",
     element: <Login/>,
   }, 
+  {
+    path: "/recuperarContraseña",
+    element: <RecuperarContraseña/>,
+  },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
