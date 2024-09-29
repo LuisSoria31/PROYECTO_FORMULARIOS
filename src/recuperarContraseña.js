@@ -1,5 +1,4 @@
-
-import { Card, Container, Form } from 'react-bootstrap';
+import { Button, Card, Container, Form } from 'react-bootstrap';
 
 export const RecuperarContraseña= () =>{
   return (
@@ -15,9 +14,10 @@ export const RecuperarContraseña= () =>{
                 <Card.Title>Recuperar su Contraseña</Card.Title>
                 <Form>
                     <Form.Group>
-                        <Form.Control></Form.Control>
+                        <Form.Control placeholder="Ingrese su correo electronico" type="email" name='email'></Form.Control>
                     </Form.Group>
                 </Form>
+                <Button className='mt-3'>Enviar</Button>
             </Card.Body>
         </Card>
       </Container>

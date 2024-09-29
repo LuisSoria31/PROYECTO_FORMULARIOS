@@ -28,6 +28,9 @@ export const Home = () => {
                 <Nav.Item className='mt-3'>
                     <Nav.Link eventKey='/recuperarContraseña'>Recuperar Contraseña</Nav.Link>
                 </Nav.Item>
+                <Nav.Item className='mt-3'>
+                    <Nav.Link eventKey='/Login'>Iniciar Sesion</Nav.Link>
+                </Nav.Item>
             </Nav>
             <Container className='mt-5'>
             {showAlert && (
