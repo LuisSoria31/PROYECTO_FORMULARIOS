@@ -11,6 +11,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import {RecuperarContraseña} from './recuperarContraseña';
+import { RegistroDeUsuarios } from './RegistroDeUsuarios';
 
 //import {create-questionnaire} from './create-cuestionarie';
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/recuperarContraseña",
     element: <RecuperarContraseña/>,
+  },
+  {
+    path: "/RU",
+    element: <RegistroDeUsuarios></RegistroDeUsuarios>,
   },
 ])
 
