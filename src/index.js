@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import {RecuperarContraseña} from './recuperarContraseña';
 import { RegistroDeUsuarios } from './RegistroDeUsuarios';
+import { CreacionDeFormulario } from './CreacionDeFormulario';
 
 //import {create-questionnaire} from './create-cuestionarie';
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/RU",
     element: <RegistroDeUsuarios></RegistroDeUsuarios>,
+  },
+  {
+    path: "/CR",
+    element: <CreacionDeFormulario></CreacionDeFormulario>,
   },
 ])
 
