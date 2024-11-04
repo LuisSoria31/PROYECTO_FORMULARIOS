@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import { Card, Button, Container, Nav, ListGroup, Alert } from 'react-bootstrap';
+import { Card, Button, Container, Nav, ListGroup, Alert, Navbar} from 'react-bootstrap';
 
 export const Home = () => {
     const [showAlert, setShowAlert] = useState(false);
@@ -15,23 +15,17 @@ export const Home = () => {
 };
     return (
         <>
-            <Nav variant="tabs" defaultActiveKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
-                <Nav.Item className='mt-3'>
-                    <Nav.Link href='/home'>Home</Nav.Link>
-                </Nav.Item>
-                <Nav.Item className='mt-3'>
-                    <Nav.Link eventKey='/bases'>Bases</Nav.Link>
-                </Nav.Item>
-                <Nav.Item className='mt-3'>
-                    <Nav.Link eventKey='/create-questionnaire'>Crear Nuevo Cuestionario</Nav.Link>
-                </Nav.Item>
-                <Nav.Item className='mt-3'>
-                    <Nav.Link eventKey='/recuperarContraseña'>Recuperar Contraseña</Nav.Link>
-                </Nav.Item>
-                <Nav.Item className='mt-3'>
-                    <Nav.Link eventKey='/Login'>Iniciar Sesion</Nav.Link>
-                </Nav.Item>
+        <Navbar bg="primary" data-bs-theme="dark" defaultActiveKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
+            <Container>
+            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Nav className="me-auto">
+                <Nav.Link href='/home'>Home</Nav.Link>
+                <Nav.Link href='/create-questionnaire'>Crear Nuevo Cuestionario</Nav.Link>
+                <Nav.Link eventKey='/recuperarContraseña'>Recuperar Contraseña</Nav.Link>
+                <Nav.Link eventKey='/Login'>Iniciar Sesion</Nav.Link>
             </Nav>
+            </Container>
+        </Navbar>
             <Container className='mt-5'>
             {showAlert && (
                     <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
@@ -39,23 +33,23 @@ export const Home = () => {
                     </Alert>
                 )}
                 <Card className="shadow-sm mb-4" style={{ borderRadius: '8px' }}>
-                    <Card.Body>
+                    <Card.Body style={{backgroundColor: 'lightblue'}}>
                         <Card.Title className="text-center">Lista De Usuarios</Card.Title>
                         <div className="text-end mb-3">
                             <Button variant='success' size="lg">Agregar Usuario</Button>
                         </div>
-                        <ListGroup>
-                            <ListGroup.Item className="d-flex justify-content-between align-items-center">Usuario 1
+                        <ListGroup >
+                            <ListGroup.Item className="d-flex justify-content-between align-items-center" style={{backgroundColor: '#cdd9dd'}}>Usuario 1
                             <Button variant="danger" size="sm" onClick={() => handleDelete('Usuario 1')}>
                                     Eliminar
                                 </Button>
                             </ListGroup.Item>
-                            <ListGroup.Item className="d-flex justify-content-between align-items-center">Usuario 2
+                            <ListGroup.Item className="d-flex justify-content-between align-items-center" style={{backgroundColor: '#cdd9dd'}}>Usuario 2
                             <Button variant="danger" size="sm" onClick={() => handleDelete('Usuario 2')}>
                                     Eliminar
                                 </Button> 
                             </ListGroup.Item>
-                            <ListGroup.Item className="d-flex justify-content-between align-items-center">Usuario 3
+                            <ListGroup.Item className="d-flex justify-content-between align-items-center" style={{backgroundColor: '#cdd9dd'}}>Usuario 3
                             <Button variant="danger" size="sm" onClick={() => handleDelete('Usuario 3')}>
                                     Eliminar
                                 </Button>

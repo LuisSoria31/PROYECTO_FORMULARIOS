@@ -16,7 +16,7 @@ console.log(datos)
 return(
 <>
     <Container  style={{ backgroundColor: '#c6c6c6 ',height: '100vh',overflow:'auto'}} fluid className='p-0 m-0'>
-        <Card style={{width:'60%'}} className="mx-auto my-auto">
+        <Card style={{width:'60%', backgroundColor: 'lightblue'}} className="mx-auto my-auto mt-5">
             <Card.Title className="text-center">¡Bienvenido!</Card.Title>
             <Card.Body>
                 <Form>
@@ -31,7 +31,7 @@ return(
                     </Form.Group>
                 </Form>
                 <Card style={{width:'60%'}} className="mx-auto my-3">
-                    <Button>Iniciar sesión</Button>
+                    <Button variant="info">Iniciar sesión</Button>
                 </Card>
         
 
