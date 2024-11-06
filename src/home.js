@@ -17,13 +17,13 @@ export const Home = () => {
         <>
             <Nav variant="tabs" defaultActiveKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
                 <Nav.Item className='mt-3'>
-                    <Nav.Link href='/home'>Home</Nav.Link>
+                    <Nav.Link href='/Home'>Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item className='mt-3'>
                     <Nav.Link eventKey='/bases'>Bases</Nav.Link>
                 </Nav.Item>
                 <Nav.Item className='mt-3'>
-                    <Nav.Link eventKey='/create-questionnaire'>Crear Nuevo Cuestionario</Nav.Link>
+                    <Nav.Link eventKey='/CR'>Crear Nuevo Cuestionario</Nav.Link>
                 </Nav.Item>
                 <Nav.Item className='mt-3'>
                     <Nav.Link eventKey='/recuperarContraseña'>Recuperar Contraseña</Nav.Link>

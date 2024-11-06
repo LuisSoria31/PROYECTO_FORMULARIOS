@@ -36,11 +36,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/RU",
-    element: <RegistroDeUsuarios></RegistroDeUsuarios>,
+    element: <RegistroDeUsuarios/>,
   },
   {
     path: "/CR",
-    element: <CreacionDeFormulario></CreacionDeFormulario>,
+    element: <CreacionDeFormulario/>,
   },
 ])
 
