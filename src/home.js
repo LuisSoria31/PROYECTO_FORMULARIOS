@@ -17,12 +17,11 @@ export const Home = () => {
         <>
         <Navbar bg="primary" data-bs-theme="dark" defaultActiveKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
             <Container>
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="#home">Home</Navbar.Brand>
             <Nav className="me-auto">
-                <Nav.Link href='/home'>Home</Nav.Link>
-                <Nav.Link href='/create-questionnaire'>Crear Nuevo Cuestionario</Nav.Link>
-                <Nav.Link eventKey='/recuperarContraseña'>Recuperar Contraseña</Nav.Link>
-                <Nav.Link eventKey='/Login'>Iniciar Sesion</Nav.Link>
+                <Nav.Link href='/CR'>Crear Nuevo Cuestionario</Nav.Link>
+                <Nav.Link href='/recuperarContraseña'>Recuperar Contraseña</Nav.Link>
+                <Nav.Link href='/Login'>Iniciar Sesion</Nav.Link>
             </Nav>
             </Container>
         </Navbar>

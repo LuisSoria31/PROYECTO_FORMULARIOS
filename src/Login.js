@@ -31,10 +31,12 @@ return(
                     </Form.Group>
                 </Form>
                 <Card style={{width:'60%'}} className="mx-auto my-3">
-                    <Button variant="info">Iniciar sesión</Button>
+                    <Button variant="info" href="/home">Iniciar sesión</Button>
                 </Card>
-        
 
+                <Card style={{width:'60%'}} className="mx-auto my-3">
+                    <Button variant="info" href="/RU">Registrate</Button>
+                </Card>
              
             </Card.Body>
         </Card>
