@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Card, Container, Form } from "react-bootstrap"
+import { Button, Card, CardBody, Container, Form, Nav, Navbar} from "react-bootstrap"
 /**De momento todo se va a ir guardando en los useState y eso. Ya al final Asignaremos las cosas a el objeto */
 
 
@@ -112,13 +112,23 @@ const [objetoInicial, setobjetoInicial] = useState(
    
     return(
         <>
+        
+        <Navbar bg="primary" data-bs-theme="dark">
+            <Container>
+            <Navbar.Brand href="#home">Creacion del formulario</Navbar.Brand>
+            <Nav className="me-auto">
+                <Nav.Link href='/home'>Home</Nav.Link>
+            </Nav>
+            </Container>
+        </Navbar>
+
         <Container>
-            <Card>
-                <Card.Body>
+            <Card className="shadow-sm mb-4" style={{ borderRadius: '8px' }}>
+                <Card.Body style={{backgroundColor: 'lightblue'}}>
                 <Card.Title>{TituloP}
                 </Card.Title>
 
-                <Form.Group>
+                <Form.Group >
                 <Form>       
                         <Form.Control  onChange={recogerTitulo}></Form.Control>
                     </Form>
@@ -138,6 +148,7 @@ const [objetoInicial, setobjetoInicial] = useState(
                 objetoInicial.preguntas.map((preguntasI)=>(
 
                     <Card>
+                        <CardBody style={{backgroundColor: 'lightblue'}}>
                         <Card.Title>{preguntaTitle}</Card.Title>
 
                         <Form.Group>
@@ -154,9 +165,9 @@ const [objetoInicial, setobjetoInicial] = useState(
                                 <option value='respuesta abierta'>Respuesta abierta</option>
 
                             </Form.Select>
-                        </Form.Group>
-                              
-                    </Card>
+                            </Form.Group>
+                        </CardBody>
+                        </Card>
                 ))
             }
             <Button onClick={()=>addQuestion()}>Agregar pregunta</Button>

@@ -1,4 +1,4 @@
-import { Card, Container, Form } from "react-bootstrap";
+import { Card, Container, Form, Nav, Navbar, Button} from "react-bootstrap";
 import { useState } from "react";
 
 
@@ -15,12 +15,17 @@ export const RegistroDeUsuarios=()=>{
 
     return(
         <>
+        <Navbar bg="primary" data-bs-theme="dark" defaultActiveKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
+            <Container>
+                <Navbar.Brand>Registrate</Navbar.Brand>
+                <Nav className="me-auto">
+                </Nav>
+            </Container>
+        </Navbar>
+
         <Container>
             <Card>
-                <Card.Title>
-                    Registro de usuario
-                </Card.Title>
-                <Card.Body>
+                <Card.Body style={{backgroundColor: 'lightblue'}}>
                         <Form>
                             <Form.Group>
                             <Form.Label>Ingresa tu nombre</Form.Label>
@@ -39,6 +44,8 @@ export const RegistroDeUsuarios=()=>{
                             <Form.Label>Ocupacion?</Form.Label>
                             <Form.Control onChange={recogerDatos}  name='Ocupacion' placeholder="¿A que te dedicas?"></Form.Control>
                             </Form.Group>
+
+                            <Button className='mt-3' href="/Login">Registrate</Button>
                         </Form>
                     </Card.Body>
             </Card>
