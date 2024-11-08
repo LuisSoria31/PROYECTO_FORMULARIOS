@@ -3,16 +3,65 @@ import { Button, Card, Container, Form} from "react-bootstrap";
 
 export const Login=()=>{
 
-const [datos, setDatos]=useState({})
-
-const recogerDatos=(e)=>{
-e.preventDefault()
-let datosN = datos
-datosN[e.target.name]=e.target.value
-setDatos(datosN)
-console.log(datos)
-}
-
+    const [FORMM, setFORMM] = useState({});
+    const [ERRORES, setERRORES] = useState({});
+    
+    //Funcion que va a setear los valores del objeto FORMM, se trae todo lo del FORMM y si no existe el campo que se manda, lo crea y setea.
+    //Si sí existe, pues solo lo setea
+    const setValue=(field, value)=>{
+    
+        setFORMM({
+            ...FORMM,
+            [field]:value
+        })
+    
+        if(!!ERRORES[field]){
+            setERRORES({
+                ...ERRORES,
+                [field]: null
+    
+            })
+    
+        }
+    
+    }
+    
+    
+    
+    const validar=()=>{
+        const {correo, contrasena}= FORMM
+        const newErrors ={}
+    
+        if(!correo || correo=== ''){
+            newErrors.correo= 'Ingresa tu correo correctamente por favor'
+            console.log('entre al primer error')
+        }  
+    
+            if(!contrasena || contrasena=== ''){
+               newErrors.contrasena= 'Ingresa algo por favor'
+               console.log('entre al segundo2 error')
+    
+           }
+        
+    
+        return newErrors
+    }
+    
+    const handleSubmit=(e)=>{ 
+    
+    
+    
+        const formErrors= validar()
+    
+        if(Object.keys(formErrors).length>0){
+            setERRORES(formErrors)
+        }else{
+            console.log(FORMM)
+            console.log('Formulario enviado juaz juaz XD')
+        }
+    
+    
+    }
 return(
 <>
     <Container  style={{ backgroundColor: '#c6c6c6 ',height: '100vh',overflow:'auto'}} fluid className='p-0 m-0'>
@@ -21,22 +70,39 @@ return(
             <Card.Body>
                 <Form>
                     <Form.Group>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control onChange={recogerDatos} type="email" name='email' placeholder="Ingresa tu correo electrónico"></Form.Control>
+                    <Form.Label>Ingresa tu correo</Form.Label>
+                               
+                               {/*La funcion flecha, que es automatica en el onChange, manda a llamar a set value y manda esos valores como parametro */}
+                               <Form.Control 
+                               onChange={(e)=>setValue('correo', e.target.value)}
+                                placeholder="correo@algo.com" 
+                                required
+                                isInvalid={!!ERRORES.correo}></Form.Control>
+                               <Form.Control.Feedback type="invalid">
+                                   {ERRORES.correo}
+                               </Form.Control.Feedback>
                     </Form.Group>
 
                     <Form.Group>
-                        <Form.Label>Contraseña</Form.Label>
-                        <Form.Control onChange={recogerDatos} type="password" name='password' placeholder="Ingresa tu contraseña"></Form.Control>
+                    <Form.Label>Contraseña</Form.Label>
+                                <Form.Control 
+                                type="password" 
+                                onChange={(e)=>setValue('contrasena', e.target.value)} 
+                                placeholder="Contraseña" 
+                                required
+                                isInvalid={!!ERRORES.contrasena}></Form.Control>
+                                <Form.Control.Feedback type="invalid">{ERRORES.contrasena}</Form.Control.Feedback>
+                                
                     </Form.Group>
-                </Form>
                 <Card style={{width:'60%'}} className="mx-auto my-3">
-                    <Button variant="info" href="/home">Iniciar sesión</Button>
+                    <Button variant="info"  onClick={()=>handleSubmit()}>Iniciar sesión</Button>{/*Elimine el href para ver las validaciones. 
+                    Debemos implementar algo para cuando jale algo de la BD */}
                 </Card>
 
                 <Card style={{width:'60%'}} className="mx-auto my-3">
                     <Button variant="info" href="/RU">Registrate</Button>
                 </Card>
+                </Form>
              
             </Card.Body>
         </Card>
