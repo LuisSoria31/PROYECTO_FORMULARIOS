@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Card, Container, Form} from "react-bootstrap";
+import { Button, Card, Container, Form, Nav, Navbar} from "react-bootstrap";
 
 export const Login=()=>{
 
@@ -64,6 +64,14 @@ export const Login=()=>{
     }
 return(
 <>
+<Navbar bg="primary" data-bs-theme="dark" defaultActiveKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
+            <Container>
+            <Navbar.Brand href="#home">Recuperar Contraseña</Navbar.Brand>
+            <Nav className="me-auto">
+                <Nav.Link href='/home'>Home</Nav.Link>
+            </Nav>
+            </Container>
+</Navbar>
     <Container  style={{ backgroundColor: '#c6c6c6 ',height: '100vh',overflow:'auto'}} fluid className='p-0 m-0'>
         <Card style={{width:'60%', backgroundColor: 'lightblue'}} className="mx-auto my-auto mt-5">
             <Card.Title className="text-center">¡Bienvenido!</Card.Title>

@@ -11,8 +11,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import {RecuperarContraseña} from './recuperarContraseña';
-import { RegistroDeUsuarios } from './RegistroDeUsuarios';
-import { CreacionDeFormulario } from './CreacionDeFormulario';
+import {RegistroDeUsuarios} from './RegistroDeUsuarios';
+import {CreacionDeFormulario} from './CreacionDeFormulario';
+
 
 //import {create-questionnaire} from './create-cuestionarie';
 
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
   {
     path: "/CR",
     element: <CreacionDeFormulario/>,
-  },
+  }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

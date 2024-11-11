@@ -1,61 +1,31 @@
-import './App';
-import { Card, Form, FormControl } from 'react-bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
+import LinesChart from "./LinesChart";
+import {Nav, Navbar, Container} from 'react-bootstrap';
 
-export const App = () => {
-  return (
-    <>
-      <Card className='text-center'>
-        <Card.Body>
-          <Card.Title>Inicio del proyecto de Formularios</Card.Title>
-        </Card.Body>
-      </Card>
-
-      <Card className='mt-3' bg='primary'>
-      <Card.Title className='text-center mt-3'>Registro de Usuario</Card.Title>
-      <Form>
-      <Form.Group>
-        <Form.Control></Form.Control>
-      </Form.Group>
-      </Form>
-      <Card.Title className='mt-2'>Nombres</Card.Title>
-      <Form className='mt-2'>
-        <Form.Group>
-          <Form.Control></Form.Control>
-        </Form.Group>
-      </Form>
-      <Card.Title className='mt-2'>Apellido Paterno</Card.Title>
-      <Form className='mt-2'>
-        <Form.Group>
-          <Form.Control></Form.Control>
-        </Form.Group>
-      </Form>
-      <Card.Title className='mt-2'>Apellido Materno</Card.Title>
-      <Form className='mt-2'>
-        <Form.Group>
-          <Form.Control></Form.Control>
-        </Form.Group>
-      </Form>
-      <Card.Title className='mt-2'>Correo Electronico</Card.Title>
-      <Form className='mt-2'>
-        <Form.Group>
-          <Form.Control></Form.Control>
-        </Form.Group>
-      </Form>
-      <Card.Title className='mt-2'>Contraseña</Card.Title>
-      <Form className='mt-2'>
-        <Form.Group>
-          <Form.Control></Form.Control>
-        </Form.Group>
-      </Form>
-      <Card.Title className='mt-2'>Confirmar Contraseña</Card.Title>
-      <Form className='mt-2'>
-        <Form.Group>
-          <Form.Control placeholder='Confrima tu Contraseña'></Form.Control>
-        </Form.Group>
-      </Form>
-      </Card>
-    </>
-  );
+function App() {
+    return (
+      <>
+      <Navbar bg="primary" data-bs-theme="dark" defaultActiveKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
+            <Container>
+            <Navbar.Brand href="#home">Graficar Datos</Navbar.Brand>
+            <Nav className="me-auto">
+                <Nav.Link href='/home'>Home</Nav.Link>
+            </Nav>
+            </Container>
+        </Navbar>
+        <div>
+            <div>
+              <center>
+                <p className="m-2"><b>Gráfico de líneas</b></p>
+                </center>
+                <div className="bg-light mx-auto px-2 border border-2 border-primary" style={{width:"1000px", height:"600px"}}>
+                    <LinesChart/>
+                </div>
+            </div>
+        </div>
+        </>
+    );
 }
 
 export default App;

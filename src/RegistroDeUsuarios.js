@@ -96,7 +96,7 @@ const handleSubmit=(e)=>{ //Funcion que me ayuda a validar. Se manda a llamar cu
             </Container>
         </Navbar>
 
-        <Container>
+        <Container className="mt-3">
             <Card>
                 <Card.Body style={{backgroundColor: 'lightblue'}}>
                         <Form>

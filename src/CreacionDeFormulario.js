@@ -122,7 +122,7 @@ const [objetoInicial, setobjetoInicial] = useState(
             </Container>
         </Navbar>
 
-        <Container>
+        <Container className="mt-3"> 
             <Card className="shadow-sm mb-4" style={{ borderRadius: '8px' }}>
                 <Card.Body style={{backgroundColor: 'lightblue'}}>
                 <Card.Title>{TituloP}
@@ -158,7 +158,7 @@ const [objetoInicial, setobjetoInicial] = useState(
                         <Form.Group>
                             <Form.Label  >Tipo de pregunta</Form.Label>
                             <Form.Select onChange={recogerTipoPregunta}>
-                                <option value='N/A'>Elegir tipo de pregunta</option>
+                                <option value='N/A'>Elegir tipo de pregunta</option>    
                                 <option value='opcion multiple'>Opcion multiple</option>
                                 <option value='checkbox'>Casillas de varias selecciones</option>
                                 <option value='radio'>Radio</option>

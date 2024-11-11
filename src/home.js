@@ -22,6 +22,7 @@ export const Home = () => {
                 <Nav.Link href='/CR'>Crear Nuevo Cuestionario</Nav.Link>
                 <Nav.Link href='/recuperarContraseña'>Recuperar Contraseña</Nav.Link>
                 <Nav.Link href='/Login'>Iniciar Sesion</Nav.Link>
+                <Nav.Link href='/'>Graficado de Datos</Nav.Link>
             </Nav>
             </Container>
         </Navbar>
