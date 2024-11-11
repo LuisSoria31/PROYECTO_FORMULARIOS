@@ -5,110 +5,150 @@ import { Button, Card, CardBody, Container, Form, Nav, Navbar} from "react-boots
 
 
 export const CreacionDeFormulario=()=>{
-//debe estar dentro del usestate
-//nomenclkatura {... objeto nuevo}
-//LLaves y puntos es para que sea rapido y obligatorio
 
-const [objetoInicial, setobjetoInicial] = useState(
+    const [objetoInicial, setobjetoInicial] = useState(
+        {
+            titulo:'Cuestionario',
+            descripcion:'Introduce la descripcion de tu cuestionario',
+            //*Preguntate a ti mismo si es singular o plural*	
+            preguntas:[
                             {
-                                titulo:'',
-                                descripcion:'Introduce la descripcion de tu cuestionario',
-                                //*Preguntate a ti mismo si es singular o plural*	
-                                preguntas:[
-                                                {
-                                                textoPregunta:'Pregunta 1',//*aqui es donde va el texto de la pregunta*,
-                                                tipoPregunta:'Aqui deberia ir el tipo de la pregunta',
-                                                opcionesDePregunta:['Opcion 1'],//*aqui van las diferentes opciones*
-                                                esObligatoria: true
-                                                }
-                                          ]
+                            textoPregunta:'Pregunta 1',//*aqui es donde va el texto de la pregunta*,
+                            tipoPregunta:'Aqui deberia ir el tipo de la pregunta',
+                            opcionesDePregunta:['Opcion 1'],//*aqui van las diferentes opciones*
+                            esObligatoria: true,
+                            noPregunta:1
                             }
+                      ]
+        }
 );
 
-    
-    const [TituloP, setTituloP] = useState('Cuestionario');
-    const [DescripcionP, setDescripcionP] = useState('');
-    const [preguntaTitle, setpreguntaTitle] = useState('');
-    const [opcionDePregunta, setopcionDePregunta] = useState('');
 
-    
-
-    //Esta funcion agarra lo que esta en el input y lo asigna al titulo del cuestionario
-    const recogerTitulo=(e)=>{
-    e.preventDefault();
-    let tituloTemporal=e.target.value
-    console.log(tituloTemporal)
-    setTituloP(tituloTemporal)
-    objetoInicial.titulo=tituloTemporal
-    console.log(objetoInicial)
-    }
-
-    //Esta funcion agarra lo que esta en el input y lo asigna a la descripcion del cuestionario
-    const recogerDescripcion=(e)=>{
-        e.preventDefault();
-        let descTemporal=e.target.value
-        console.log(descTemporal)
-        setDescripcionP(descTemporal)
-        objetoInicial.descripcion=descTemporal
-        console.log(objetoInicial)
-        }
-
-    //Esto agarra lo dle input y lo asigna como el titulo(texto) de la pregunta en cuestion. Lo asigna a una variable, de momento.
-    const recogerTextoPregunta=(e)=>{
-        e.preventDefault();
-        const TPtemporal = e.target.value
-        console.log(TPtemporal);
-        setTituloP(TPtemporal)
-        
-    }
-
-    //Se supone agarra lo de el tipo de pregunta y lo guarda en una variable
-    const recogerTipoPregunta=(e)=>{
-        e.preventDefault();
-        const OPtemporal=e.target.value
-        console.log(OPtemporal)
-        setopcionDePregunta(OPtemporal)
-
-    }
-
-    const addQuestion=()=>{
-        let variableDatosAnteriores=objetoInicial
-        let datosAmeter={
-            textoPregunta:'Pregunta 1',//*aqui es donde va el texto de la pregunta*,
-            tipoPregunta:'Aqui deberia ir el tipo de la pregunta',
-            opcionesDePregunta:['Opcion 1'],//*aqui van las diferentes opciones*
-            esObligatoria: true
-            }
-
-        //console.log(variableDatosAnteriores, 'Hola, soy variableDatosAnteriores')
-        //console.log(datosAmeter, 'Hola, soy datosAmeter')
-        variableDatosAnteriores.preguntas.push(datosAmeter)
-        const datosNuevos= variableDatosAnteriores  //este mas que nada es para mantener la concordancia del nombre de las variables
-       // console.log(datosNuevos, 'Hola, soy datosNuevos')
-        setobjetoInicial({...datosNuevos})
-        
-    }
-
-    //const agregarPregunta=()=>{
-        //debe estar dentro del usestate
-//nomenclkatura {... objeto nuevo}
-//LLaves y puntos es para que sea rapido y obligatorio
+const [TituloP, setTituloP] = useState('Cuestionario');
+const [DescripcionP, setDescripcionP] = useState('');
+const [preguntaTitle, setpreguntaTitle] = useState('');
+const [opcionDePregunta, setopcionDePregunta] = useState('');
+const [TextoDeOpcion, setTextoDeOpcion] = useState('');
 
 
-        
-       /* const addPregunta=            {
-            textoPregunta:'Pregunta 1',//*aqui es donde va el texto de la pregunta*,
-            tipoPregunta:'Aqui deberia ir el tipo de la pregunta',
-            opciones:['Opcion 1'],//*aqui van las diferentes opciones*
-            esObligatoria: null
-            }
 
-        objetoInicial['preguntas'].push(addPregunta)        
-        console.log('mandaron a llamar a agregarPregunta')
-        console.log(objetoInicial)*/
-        
+//Esta funcion agarra lo que esta en el input y lo asigna al titulo del cuestionario
+const recogerTitulo=(e)=>{
+e.preventDefault();
+let tituloTemporal=e.target.value
+console.log(tituloTemporal)
+setTituloP(tituloTemporal)
+objetoInicial.titulo=tituloTemporal
+console.log(objetoInicial)
+}
 
-   // }
+//Esta funcion agarra lo que esta en el input y lo asigna a la descripcion del cuestionario
+const recogerDescripcion=(e)=>{
+e.preventDefault();
+let descTemporal=e.target.value
+console.log(descTemporal)
+setDescripcionP(descTemporal)
+objetoInicial.descripcion=descTemporal
+console.log(objetoInicial)
+}
+
+
+
+
+
+const addQuestion=()=>{
+let variableDatosAnteriores=objetoInicial
+let datosAmeter={
+textoPregunta:'Pregunta 1',//*aqui es donde va el texto de la pregunta*,
+tipoPregunta:'Aqui deberia ir el tipo de la pregunta',
+opcionesDePregunta:['Opcion 1'],//*aqui van las diferentes opciones*
+esObligatoria: true
+}
+
+//console.log(variableDatosAnteriores, 'Hola, soy variableDatosAnteriores')
+//console.log(datosAmeter, 'Hola, soy datosAmeter')
+variableDatosAnteriores.preguntas.push(datosAmeter)
+const datosNuevos= variableDatosAnteriores  //este mas que nada es para mantener la concordancia del nombre de las variables
+// console.log(datosNuevos, 'Hola, soy datosNuevos')
+setobjetoInicial({...datosNuevos})
+
+}
+
+
+//Esto agarra lo dle input y lo asigna como el titulo(texto) de la pregunta en cuestion. Lo asigna a una variable, de momento.
+const recogerTextoPregunta=(e)=>{
+e.preventDefault();
+let tpTemporal=e.target.value
+console.log(tpTemporal)
+setpreguntaTitle(tpTemporal)
+
+
+}
+const cambiarTituloPregunta=(indice)=>{
+objetoInicial.preguntas[indice].textoPregunta=preguntaTitle
+const datosNuevos=objetoInicial
+setobjetoInicial({...datosNuevos})
+console.log(objetoInicial)
+}
+
+//RECOGER EL TEXTO DE LA OPCION
+const recogerTextoOpcion=(e)=>{
+e.preventDefault();
+let totemporal=e.target.value
+console.log(totemporal)
+setTextoDeOpcion(totemporal)
+}
+const agregarTextoOpcion=(indicePregunta,inidceOpcion)=>{
+objetoInicial.preguntas[indicePregunta].opcionesDePregunta[inidceOpcion]=TextoDeOpcion
+const datosNuevos=objetoInicial
+setobjetoInicial({...datosNuevos})
+console.log(objetoInicial)
+}
+
+//RECOGE TIPO DE OPCION
+//Se supone agarra lo de el tipo de pregunta y lo guarda en una variable
+const recogerTipoPregunta=(e)=>{
+e.preventDefault();
+const OPtemporal=e.target.value
+console.log(OPtemporal)
+setopcionDePregunta(OPtemporal)
+}
+
+const agregarTipoOpcion=(indicePregunta)=>{
+objetoInicial.preguntas[indicePregunta].tipoPregunta=opcionDePregunta
+const datosNuevos=objetoInicial
+setobjetoInicial({...datosNuevos})
+console.log(objetoInicial)
+}
+
+//RECOGE SI ES OBLIGATORIA
+const CambiarSiEsObligatoria=(indicePregunta)=>{
+objetoInicial.preguntas[indicePregunta].esObligatoria=true
+const datosNuevos=objetoInicial
+setobjetoInicial({...datosNuevos})
+console.log(objetoInicial)
+
+}
+
+
+//AGREGA OPCION
+const addQoption=(indice)=>{
+
+console.log(        objetoInicial.preguntas[indice].opcionesDePregunta
+)
+//const varConNuevaopcion=objetoInicial.preguntas[indice].opcionesDePregunta.push('opcionN')
+
+let variableDatosAnteriores=objetoInicial
+// console.log(variableDatosAnteriores,'hola soy VDA')
+let opcionesAmeter='opcionN'
+
+//console.log(opcionesAmeter, 'Soy opcionesAmeter')
+
+variableDatosAnteriores.preguntas[indice].opcionesDePregunta.push(opcionesAmeter)
+// console.log(variableDatosAnteriores,'hola soy VDA pero el nuevo')
+const datosNuevos=variableDatosAnteriores
+setobjetoInicial({...datosNuevos})   
+}
    
     return(
         <>
@@ -125,18 +165,20 @@ const [objetoInicial, setobjetoInicial] = useState(
         <Container className="mt-3"> 
             <Card className="shadow-sm mb-4" style={{ borderRadius: '8px' }}>
                 <Card.Body style={{backgroundColor: 'lightblue'}}>
-                <Card.Title>{TituloP}
+                <Card.Title className="d-flex justify-content-center" >{objetoInicial.titulo}
                 </Card.Title>
+                 
 
-                <Form.Group >
+                <Form.Group className=" mx-auto">
                 <Form>       
-                        <Form.Control  onChange={recogerTitulo}></Form.Control>
+                        <Form.Control className="mx-auto my-2" style={{width:'90%'}} onChange={recogerTitulo}></Form.Control>
                     </Form>
                 
                 </Form.Group>
 
-                <Form.Group>
-                    <Form.Control on onChange={recogerDescripcion} placeholder="Ingresa la descripcion de este formulario"></Form.Control>
+                <Form.Group >
+                    <Form.Label className="mx-5 my-3">¿De qué tartará este formulario?</Form.Label>
+                    <Form.Control type="textarea" rows={3} className="mx-auto" style={{width:'90%'}} onChange={recogerDescripcion} placeholder="Ingresa la descripcion de este formulario"></Form.Control>
                 </Form.Group>
 
                 </Card.Body>
@@ -144,30 +186,45 @@ const [objetoInicial, setobjetoInicial] = useState(
             </Card>
 
 
-           {
-                objetoInicial.preguntas.map((preguntasI)=>(
+            {
+                objetoInicial.preguntas.map((preguntasI, indexP)=>(
+                    
+                    <Card className="my-3 mx-auto p-3 d-flex gap-1" style={{width:'80%', backgroundColor:'lightblue'}}>
 
-                    <Card>
-                        <CardBody style={{backgroundColor: 'lightblue'}}>
-                        <Card.Title>{preguntaTitle}</Card.Title>
+                        <Card.Title>{indexP+1}.- {objetoInicial.preguntas[indexP].textoPregunta}</Card.Title>
+                         
 
-                        <Form.Group>
-                        <Form.Control placeholder="Escribe la pregunta que quieres hacer" onChange={recogerTextoPregunta}></Form.Control>
+                        <Form.Group style={{width:'100%'}} className="mx-auto my-1">
+                        <Form.Control type='textarea'placeholder="Escribe la pregunta que quieres hacer" onChange={recogerTextoPregunta} onBlur={()=>cambiarTituloPregunta(indexP)}></Form.Control>
                         </Form.Group>
 
-                        <Form.Group>
-                            <Form.Label  >Tipo de pregunta</Form.Label>
-                            <Form.Select onChange={recogerTipoPregunta}>
-                                <option value='N/A'>Elegir tipo de pregunta</option>    
+                           <div className="d-flex justify-content-between m-3 p-0">
+                     
+                           </div>
+                           {
+                                preguntasI.opcionesDePregunta.map((questionOption, indexOpcion)=>(
+                                    <Form.Control placeholder="Opcion..." onChange={recogerTextoOpcion} onBlur={()=>agregarTextoOpcion(indexP,indexOpcion)}></Form.Control>
+                                ))
+                            }
+
+                            <div className='d-flex justify-content-between mx-auto my-auto' style={{color:'white'}}>
+                            <Button  onClick={()=>addQoption(indexP)} className="m-2"  style={{width:'25%', height:'20%', }}>Agregar opcion</Button>
+                          
+                           <Form.Group style={{width:'35%'}} className="m-2">
+                            <Form.Select  onChange={recogerTipoPregunta} onBlur={()=>agregarTipoOpcion(indexP)}>
+                                <option value='N/A'>Tipo de pregunta</option>
                                 <option value='opcion multiple'>Opcion multiple</option>
                                 <option value='checkbox'>Casillas de varias selecciones</option>
                                 <option value='radio'>Radio</option>
                                 <option value='respuesta abierta'>Respuesta abierta</option>
-
                             </Form.Select>
-                            </Form.Group>
-                        </CardBody>
-                        </Card>
+                        </Form.Group>
+
+                        <Form.Check className="my-3" type="checkbox" label='¿Será pregunta obligatoria?' onChange={CambiarSiEsObligatoria} ></Form.Check>
+
+                            </div>
+                              
+                    </Card>
                 ))
             }
             <Button onClick={()=>addQuestion()}>Agregar pregunta</Button>
