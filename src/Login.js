@@ -66,7 +66,7 @@ return(
 <>
 <Navbar bg="primary" data-bs-theme="dark" defaultActiveKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
             <Container>
-            <Navbar.Brand href="#home">Recuperar Contraseña</Navbar.Brand>
+            <Navbar.Brand href="#home">Inicio de Sesión</Navbar.Brand>
             <Nav className="me-auto">
                 <Nav.Link href='/home'>Home</Nav.Link>
             </Nav>

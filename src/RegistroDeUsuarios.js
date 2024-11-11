@@ -88,14 +88,14 @@ const handleSubmit=(e)=>{ //Funcion que me ayuda a validar. Se manda a llamar cu
 
     return(
         <>
-        <Navbar bg="primary" data-bs-theme="dark" defaultActiveKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
+         <Navbar bg="primary" data-bs-theme="dark" defaultActiveKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
             <Container>
                 <Navbar.Brand>Registrate</Navbar.Brand>
                 <Nav className="me-auto">
                 </Nav>
             </Container>
         </Navbar>
-
+        
         <Container className="mt-3">
             <Card>
                 <Card.Body style={{backgroundColor: 'lightblue'}}>

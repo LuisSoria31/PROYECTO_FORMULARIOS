@@ -21,7 +21,7 @@ import {CreacionDeFormulario} from './CreacionDeFormulario';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <Login/>,
   }, 
   {
     path: "/home",
@@ -42,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/CR",
     element: <CreacionDeFormulario/>,
+  },
+  {
+    path: "/App",
+    element: <App/>
   }
 ])
 
